@@ -11,4 +11,7 @@ To get it up and running
 
 * Need to edit gradle.properties with your own unique firebase url.
 
+TODO:
+====
+* refactor out the blue/red/grey/green properties as a style
 

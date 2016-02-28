@@ -8,23 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AuthenticationDashedCircles">
+    <style name="AuthenticationDashedYellowCircles">
+        <item name="android:src">@drawable/ic_add_black_48dp</item>
         <item name="android:layout_width">28dp</item>
         <item name="android:layout_height">28dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:background">@drawable/dashed_circle_yellow</item>
         <item name="android:layout_margin">3dp</item>
     </style>
 
     <style name="AuthenticationSkillTitles">
-        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginRight">5dp</item>
-        <item name="android:textColor">@color/flatui_yellow_1</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/greyscale_13</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:textSize">12sp</item>
         <item name="fontface">montserrat_light</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
-    
+
 
 </resources>

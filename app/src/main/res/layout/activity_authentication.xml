@@ -14,28 +14,41 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal">
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logo"/>
+            android:textColor="@color/flatui_yellow_1"
+            app:fontface="montserrat_bold"
+            android:layout_marginBottom="20dp"
+            android:textSize="22sp"
+            android:text="DidWhat"/>
         <com.compscieddy.didwhat.EddieEditText
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             app:fontface="montserrat_light"
-            android:hint="enter email..."/>
+            android:hint="your email..."/>
         <com.compscieddy.didwhat.EddieEditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             app:fontface="montserrat_light"
-            android:hint="enter password..."/>
+            android:layout_marginBottom="20dp"
+            android:hint="your password..."/>
         <Button
             android:id="@+id/authentication_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/flatui_yellow_1"
+            android:padding="10dp"
+            android:textColor="@color/white"
             android:text="Login/Signup"/>
     </LinearLayout>
 
@@ -43,31 +56,81 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:textColor="@color/flatui_yellow_1"
+            android:textColor="@color/greyscale_13"
             app:fontface="montserrat_light"
             android:layout_marginBottom="10dp"
             android:textAlignment="center"
-            android:text="Complete 1 Thing for each skill you have."/>
+            android:text="Complete 1 Thing Everyday for each skill you have."/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="18dp"
             android:orientation="horizontal">
             <com.compscieddy.didwhat.EddieTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 app:fontface="montserrat_light"
+                android:textColor="@color/greyscale_13"
+                android:textSize="14sp"
+                android:layout_marginRight="14dp"
                 android:text="Ex."/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/stroked_rectangle_greyscale_13"
                 android:orientation="vertical">
                 <!-- LOL to the layout nesting - please TODO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="78dp"
+                        android:textSize="8sp"
+                        android:text="Mon \n 5/12"
+                        android:textColor="@color/greyscale_13"
+                        app:fontface="montserrat_light"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:textSize="8sp"
+                        android:text="Tue \n 5/13"
+                        android:textColor="@color/greyscale_13"
+                        app:fontface="montserrat_light"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:textSize="8sp"
+                        android:text="Wed \n 5/14"
+                        android:textColor="@color/greyscale_13"
+                        app:fontface="montserrat_light"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:textSize="8sp"
+                        android:text="Thu \n 5/15"
+                        android:textColor="@color/greyscale_13"
+                        app:fontface="montserrat_light"/>
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,14 +138,31 @@
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/AuthenticationSkillTitles"
                         android:text="Reading"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:background="@drawable/stroked_circle_grey"
+                        style="@style/AuthenticationDashedYellowCircles"
+                        app:fontface="montserrat_bold"
+                        android:textColor="@color/flatui_grey_1"
+                        android:text="-"
+                        android:textAlignment="center"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
-                    <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
-                    <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
-                    <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/change_check_color_1"
+                        android:src="@drawable/ic_check_black_48dp"
+                        android:background="@drawable/stroked_circle_green"
+                        style="@style/AuthenticationDashedYellowCircles"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:background="@drawable/stroked_circle_blue"
+                        android:textAlignment="center"
+                        android:textColor="@color/flatui_blue_1"
+                        android:text="13"
+                        style="@style/AuthenticationDashedYellowCircles"/>
+                    <com.compscieddy.didwhat.EddieTextView
+                        android:text="X"
+                        android:textColor="@color/flatui_red_1"
+                        android:textAlignment="center"
+                        app:fontface="montserrat_light"
+                        android:background="@drawable/stroked_circle_red"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -92,13 +172,17 @@
                         style="@style/AuthenticationSkillTitles"
                         android:text="Programming"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_3"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_4"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_5"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_6"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -108,22 +192,26 @@
                         style="@style/AuthenticationSkillTitles"
                         android:text="Gym"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_7"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_8"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_9"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                     <ImageView
-                        style="@style/AuthenticationDashedCircles"/>
+                        android:id="@+id/yellow_circle_10"
+                        style="@style/AuthenticationDashedYellowCircles"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/flatui_yellow_1"
-            app:fontface="montserrat_semibold"
+            app:fontface="montserrat_extrabold"
             android:text="DidWhat"/>
     </LinearLayout>
 

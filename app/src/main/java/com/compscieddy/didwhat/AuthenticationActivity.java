@@ -1,11 +1,13 @@
 package com.compscieddy.didwhat;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.compscieddy.eddie_utils.Etils;
@@ -31,11 +33,36 @@ public class AuthenticationActivity extends AppCompatActivity {
   @Bind(R.id.authentication_button) Button mAuthenticationButton;
   @Bind(R.id.progress_bar) ProgressBar mProgressBar;
 
+  @Bind(R.id.change_check_color_1) ImageView changeCheckColor1;
+  private int[] changeColors = new int[] {
+      R.id.yellow_circle_3,
+      R.id.yellow_circle_4,
+      R.id.yellow_circle_5,
+      R.id.yellow_circle_6,
+      R.id.yellow_circle_7,
+      R.id.yellow_circle_8,
+      R.id.yellow_circle_9,
+      R.id.yellow_circle_10
+  };
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_authentication);
     ButterKnife.bind(this);
+
+    Drawable drawable = changeCheckColor1.getDrawable();
+    if (drawable != null) {
+      Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
+    }
+
+    for (int c : changeColors) {
+      ImageView circ = (ImageView) findViewById(c);
+      Drawable d = circ.getDrawable();
+      if (d != null) {
+        Etils.applyColorFilter(d, getResources().getColor(R.color.flatui_yellow_1));
+      }
+    }
 
   }
 
