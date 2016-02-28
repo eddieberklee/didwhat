@@ -58,7 +58,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
+            <com.compscieddy.didwhat.EddieTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontface="montserrat_light"
+                android:text="Ex."/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- LOL to the layout nesting - please TODO -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.compscieddy.didwhat.EddieTextView
+                        style="@style/AuthenticationSkillTitles"
+                        android:text="Reading"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.compscieddy.didwhat.EddieTextView
+                        style="@style/AuthenticationSkillTitles"
+                        android:text="Programming"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.compscieddy.didwhat.EddieTextView
+                        style="@style/AuthenticationSkillTitles"
+                        android:text="Gym"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                    <ImageView
+                        style="@style/AuthenticationDashedCircles"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="wrap_content"
