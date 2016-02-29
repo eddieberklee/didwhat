@@ -13,6 +13,8 @@
     <color name="foraday_green">#64A725</color>
     <color name="foraday_grey">#C2C4C6</color>
 
+    <color name="main_yellow">@color/flatui_yellow_1</color>
+
     <!-- flat ui colors-->
     <color name="flatui_lightgrey_1">#ecf0f1</color>
     <color name="flatui_lightgrey_2">#bdc3c7</color>

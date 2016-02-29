@@ -36,13 +36,7 @@ public class AuthenticationActivity extends AppCompatActivity {
 
   @Bind(R.id.change_check_color_1) ImageView changeCheckColor1;
   private int[] changeColors = new int[] {
-      R.id.yellow_circle_3,
-      R.id.yellow_circle_4,
-      R.id.yellow_circle_5,
       R.id.yellow_circle_6,
-      R.id.yellow_circle_7,
-      R.id.yellow_circle_8,
-      R.id.yellow_circle_9,
       R.id.yellow_circle_10
   };
 
@@ -61,7 +55,7 @@ public class AuthenticationActivity extends AppCompatActivity {
       ImageView circ = (ImageView) findViewById(c);
       Drawable d = circ.getDrawable();
       if (d != null) {
-        Etils.applyColorFilter(d, getResources().getColor(R.color.flatui_yellow_1));
+        Etils.applyColorFilter(d, getResources().getColor(R.color.main_yellow));
       }
     }
 

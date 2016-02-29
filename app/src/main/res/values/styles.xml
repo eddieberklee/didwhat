@@ -8,15 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AuthenticationDashedYellowCircles">
-        <item name="android:src">@drawable/ic_add_black_48dp</item>
-        <item name="android:layout_width">28dp</item>
-        <item name="android:layout_height">28dp</item>
-        <item name="android:padding">5dp</item>
-        <item name="android:background">@drawable/dashed_circle_yellow</item>
-        <item name="android:layout_margin">3dp</item>
-    </style>
-
     <style name="AuthenticationSkillTitles">
         <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -33,6 +24,23 @@
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">@color/greyscale_13</item>
         <item name="fontface">montserrat_light</item>
+    </style>
+
+    <style name="YellowCircleButton">
+        <item name="android:src">@drawable/ic_add_black_48dp</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/dashed_circle_yellow</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="GreyCircleButton" parent="YellowCircleButton">
+        <item name="android:background">@drawable/stroked_circle_grey</item>
+        <item name="fontface">montserrat_bold</item>
+        <item name="android:textColor">@color/flatui_grey_1</item>
+        <item name="android:text">-</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
 
