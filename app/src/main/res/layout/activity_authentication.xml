@@ -126,7 +126,9 @@
                     <com.compscieddy.didwhat.EddieTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thu \n 5/15"
+                        android:textColor="@color/main_yellow"
+                        android:layout_gravity="center_vertical"
+                        android:text="TODAY"
                         style="@style/AuthenticationDayTitles"/>
                 </LinearLayout>
                 <LinearLayout
@@ -140,22 +142,13 @@
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/GreyCircleButton"/>
                     <ImageView
-                        android:id="@+id/change_check_color_1"
-                        android:src="@drawable/ic_check_black_48dp"
-                        android:background="@drawable/stroked_circle_green"
-                        style="@style/YellowCircleButton"/>
+                        android:id="@+id/green_check_button_1"
+                        style="@style/GreenCircleButton"/>
                     <com.compscieddy.didwhat.EddieTextView
-                        android:background="@drawable/stroked_circle_blue"
-                        android:textAlignment="center"
-                        android:textColor="@color/flatui_blue_1"
                         android:text="13"
-                        style="@style/YellowCircleButton"/>
-                    <com.compscieddy.didwhat.EddieTextView
-                        android:text="X"
-                        android:textColor="@color/flatui_red_1"
-                        android:textAlignment="center"
-                        app:fontface="montserrat_light"
-                        android:background="@drawable/stroked_circle_red"
+                        style="@style/BlueCircleButton"/>
+                    <ImageView
+                        android:id="@+id/yellow_circle_1"
                         style="@style/YellowCircleButton"/>
 
                 </LinearLayout>
@@ -169,7 +162,7 @@
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/GreyCircleButton"/>
                     <com.compscieddy.didwhat.EddieTextView
-                        style="@style/GreyCircleButton"/>
+                        style="@style/RedCircleButton"/>
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/GreyCircleButton"/>
                     <ImageView
@@ -187,8 +180,9 @@
                         style="@style/GreyCircleButton"/>
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/GreyCircleButton"/>
-                    <com.compscieddy.didwhat.EddieTextView
-                        style="@style/GreyCircleButton"/>
+                    <ImageView
+                        android:id="@+id/green_check_button_2"
+                        style="@style/GreenCircleButton"/>
                     <ImageView
                         android:id="@+id/yellow_circle_10"
                         style="@style/YellowCircleButton"/>

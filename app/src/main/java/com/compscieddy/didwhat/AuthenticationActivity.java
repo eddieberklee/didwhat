@@ -34,8 +34,10 @@ public class AuthenticationActivity extends AppCompatActivity {
   TextView mAuthenticationButton;
   @Bind(R.id.progress_bar) ProgressBar mProgressBar;
 
-  @Bind(R.id.change_check_color_1) ImageView changeCheckColor1;
+  @Bind(R.id.green_check_button_1) ImageView greenCheckButton1;
+  @Bind(R.id.green_check_button_2) ImageView greenCheckButton2;
   private int[] changeColors = new int[] {
+      R.id.yellow_circle_1,
       R.id.yellow_circle_6,
       R.id.yellow_circle_10
   };
@@ -49,7 +51,11 @@ public class AuthenticationActivity extends AppCompatActivity {
     mEmail.setText("test@test.com");
     mPassword.setText("password");
 
-    Drawable drawable = changeCheckColor1.getDrawable();
+    Drawable drawable = greenCheckButton1.getDrawable();
+    if (drawable != null) {
+      Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
+    }
+    drawable = greenCheckButton2.getDrawable();
     if (drawable != null) {
       Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
     }

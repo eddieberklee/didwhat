@@ -33,14 +33,36 @@
         <item name="android:padding">5dp</item>
         <item name="android:background">@drawable/dashed_circle_yellow</item>
         <item name="android:layout_margin">3dp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
+    <!-- For TextView -->
     <style name="GreyCircleButton" parent="YellowCircleButton">
         <item name="android:background">@drawable/stroked_circle_grey</item>
         <item name="fontface">montserrat_bold</item>
         <item name="android:textColor">@color/flatui_grey_1</item>
         <item name="android:text">-</item>
-        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!-- For TextView -->
+    <style name="RedCircleButton" parent="YellowCircleButton">
+        <item name="android:text">X</item>
+        <item name="android:textColor">@color/flatui_red_1</item>
+        <item name="fontface">montserrat_light</item>
+        <item name="android:background">@drawable/stroked_circle_red</item>
+    </style>
+
+    <!-- For TextView -->
+    <style name="BlueCircleButton" parent="YellowCircleButton">
+        <item name="android:textColor">@color/flatui_blue_1</item>
+        <item name="android:background">@drawable/stroked_circle_blue</item>
+    </style>
+
+    <!-- For ImageView -->
+    <style name="GreenCircleButton" parent="YellowCircleButton">
+        <item name="android:textColor">@color/flatui_green_1</item>
+        <item name="android:background">@drawable/stroked_circle_green</item>
+        <item name="android:src">@drawable/ic_check_black_48dp</item>
     </style>
 
 
