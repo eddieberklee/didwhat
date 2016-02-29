@@ -57,7 +57,8 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textColor="@color/white"
-            android:text="Login/Signup"/>
+            app:fontface="montserrat_light"
+            android:text="Login / Signup"/>
     </LinearLayout>
 
     <LinearLayout

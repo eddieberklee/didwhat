@@ -46,6 +46,9 @@ public class AuthenticationActivity extends AppCompatActivity {
     setContentView(R.layout.activity_authentication);
     ButterKnife.bind(this);
 
+    mEmail.setText("test@test.com");
+    mPassword.setText("password");
+
     Drawable drawable = changeCheckColor1.getDrawable();
     if (drawable != null) {
       Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
@@ -91,7 +94,7 @@ public class AuthenticationActivity extends AppCompatActivity {
       @Override
       public void onError(FirebaseError firebaseError) {
         if (firebaseError.getCode() == FirebaseError.EMAIL_TAKEN) {
-          Etils.showToast(AuthenticationActivity.this, "Email " + email + " already exists - trying to log you in instead");
+          Etils.showToast(AuthenticationActivity.this, "Email " + email + " already exists - logging you in instead");
           loginUser(email, password);
         } else {
           lawg.e("firebaseError: " + firebaseError + " firebaseError.getCode(): " + firebaseError.getCode());
@@ -127,6 +130,11 @@ public class AuthenticationActivity extends AppCompatActivity {
           @Override
           public void onCancelled(FirebaseError firebaseError) {
             lawg.e("onCancelled() while logging in firebaseError: " + firebaseError);
+
+            mProgressBar.setVisibility(View.INVISIBLE);
+            if (firebaseError.getCode() == FirebaseError.INVALID_PASSWORD) {
+              Etils.showToast(AuthenticationActivity.this, "Wrong password!");
+            }
           }
         });
       }
