@@ -28,26 +28,32 @@
             android:text="DidWhat"/>
         <com.compscieddy.didwhat.EddieEditText
             android:id="@+id/email"
-            android:textSize="14sp"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_corner_stroked_yellow"
+            android:textSize="14sp"
             app:fontface="montserrat_light"
+            android:layout_marginBottom="5dp"
             android:hint="your email..."/>
         <com.compscieddy.didwhat.EddieEditText
             android:id="@+id/password"
-            android:textSize="14sp"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_corner_stroked_yellow"
+            android:textSize="14sp"
             app:fontface="montserrat_light"
             android:layout_marginBottom="20dp"
             android:hint="your password..."/>
-        <Button
+        <com.compscieddy.didwhat.EddieTextView
             android:id="@+id/authentication_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/flatui_yellow_1"
-            android:padding="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:textColor="@color/white"
             android:text="Login/Signup"/>
     </LinearLayout>
@@ -102,34 +108,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="78dp"
-                        android:textSize="8sp"
                         android:text="Mon \n 5/12"
-                        android:textColor="@color/greyscale_13"
-                        app:fontface="montserrat_light"/>
+                        style="@style/AuthenticationDayTitles"/>
                     <com.compscieddy.didwhat.EddieTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:textSize="8sp"
                         android:text="Tue \n 5/13"
-                        android:textColor="@color/greyscale_13"
-                        app:fontface="montserrat_light"/>
+                        style="@style/AuthenticationDayTitles"/>
                     <com.compscieddy.didwhat.EddieTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:textSize="8sp"
                         android:text="Wed \n 5/14"
-                        android:textColor="@color/greyscale_13"
-                        app:fontface="montserrat_light"/>
+                        style="@style/AuthenticationDayTitles"/>
                     <com.compscieddy.didwhat.EddieTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:textSize="8sp"
                         android:text="Thu \n 5/15"
-                        android:textColor="@color/greyscale_13"
-                        app:fontface="montserrat_light"/>
+                        style="@style/AuthenticationDayTitles"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -138,6 +133,7 @@
                     <com.compscieddy.didwhat.EddieTextView
                         style="@style/AuthenticationSkillTitles"
                         android:text="Reading"/>
+
                     <com.compscieddy.didwhat.EddieTextView
                         android:background="@drawable/stroked_circle_grey"
                         style="@style/AuthenticationDashedYellowCircles"
@@ -163,6 +159,7 @@
                         app:fontface="montserrat_light"
                         android:background="@drawable/stroked_circle_red"
                         style="@style/AuthenticationDashedYellowCircles"/>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"

@@ -5,10 +5,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.compscieddy.eddie_utils.Etils;
 import com.compscieddy.eddie_utils.Lawg;
@@ -30,7 +30,8 @@ public class AuthenticationActivity extends AppCompatActivity {
 
   @Bind(R.id.email) EditText mEmail;
   @Bind(R.id.password) EditText mPassword;
-  @Bind(R.id.authentication_button) Button mAuthenticationButton;
+  @Bind(R.id.authentication_button)
+  TextView mAuthenticationButton;
   @Bind(R.id.progress_bar) ProgressBar mProgressBar;
 
   @Bind(R.id.change_check_color_1) ImageView changeCheckColor1;
