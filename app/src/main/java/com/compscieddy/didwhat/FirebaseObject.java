@@ -15,7 +15,11 @@ import java.util.Map;
 
 /**
  * Created by elee on 2/8/16.
- *   Subclasses must populate OBJECT_URL_STRING, override getKey()
+ * Subclasses must override:
+ *   getObjectUrl() - provide the base url of the object
+ *   deleteFirebase()
+ * Subclasses must call:
+ *   updateFirebase
  */
 abstract class FirebaseObject {
 
@@ -61,7 +65,8 @@ abstract class FirebaseObject {
   }
 
   protected void updateFirebase(String FIELD, Object value) {
-    // LOL cause fucking Firebase uses these same setters and I didn't read it in their documentation
+    /** LOL cause fucking Firebase uses any setters it finds when deserializing and I didn't read it in their documentation,
+      * so a null key means it's Firebase that's deserializing no when I'm calling the setter in code */
     if (key == null) { // Object didn't go through FirebaseObject() so it must be the JSON Deserializer
       return;
     }
