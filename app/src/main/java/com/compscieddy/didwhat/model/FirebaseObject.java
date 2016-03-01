@@ -1,4 +1,4 @@
-package com.compscieddy.didwhat;
+package com.compscieddy.didwhat.model;
 
 import android.content.Context;
 import android.text.TextUtils;
