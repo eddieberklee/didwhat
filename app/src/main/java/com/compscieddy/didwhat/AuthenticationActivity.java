@@ -36,6 +36,8 @@ public class AuthenticationActivity extends AppCompatActivity {
 
   @Bind(R.id.green_check_button_1) ImageView greenCheckButton1;
   @Bind(R.id.green_check_button_2) ImageView greenCheckButton2;
+  @Bind(R.id.green_check_button_3) ImageView greenCheckButton3;
+  @Bind(R.id.check_button_icon) ImageView greenCheckButton4;
   private int[] changeColors = new int[] {
       R.id.yellow_circle_1,
       R.id.yellow_circle_6,
@@ -51,11 +53,20 @@ public class AuthenticationActivity extends AppCompatActivity {
     mEmail.setText("test@test.com");
     mPassword.setText("password");
 
+    // TODO: refactor into method to call on view id and automatically apply the right color filter
     Drawable drawable = greenCheckButton1.getDrawable();
     if (drawable != null) {
       Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
     }
     drawable = greenCheckButton2.getDrawable();
+    if (drawable != null) {
+      Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
+    }
+    drawable = greenCheckButton3.getDrawable();
+    if (drawable != null) {
+      Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
+    }
+    drawable = greenCheckButton4.getDrawable();
     if (drawable != null) {
       Etils.applyColorFilter(drawable, getResources().getColor(R.color.flatui_green_1));
     }
