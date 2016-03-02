@@ -30,15 +30,17 @@
         <attr name="customColor" format="color"/>
     </declare-styleable>
 
-    <style name="YellowCircleButton">
-        <item name="android:src">@drawable/ic_add_black_48dp</item>
+    <style name="CircleButton">
         <item name="android:layout_width">28dp</item>
         <item name="android:layout_height">28dp</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/dashed_circle_yellow</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:textAlignment">center</item>
+    </style>
+    <style name="YellowCircleButton" parent="CircleButton"><!-- ImageView -->
+        <item name="android:src">@drawable/ic_add_black_48dp</item>
+        <item name="android:background">@drawable/dashed_circle_yellow</item>
         <item name="customColor">@color/flatui_yellow_1</item>
     </style>
 
@@ -49,11 +51,10 @@
         <item name="android:background">@drawable/large_dashed_circle_yellow</item>
     </style>
 
-    <!-- For TextView -->
-    <style name="GreyCircleButton" parent="YellowCircleButton">
+    <style name="GreyCircleButton" parent="CircleButton"><!-- TextView -->
         <item name="android:background">@drawable/stroked_circle_grey</item>
+        <item name="android:textColor">@color/circle_grey</item>
         <item name="fontface">montserrat_bold</item>
-        <item name="android:textColor">@color/flatui_grey_1</item>
         <item name="android:text">-</item>
     </style>
 
@@ -65,10 +66,9 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <!-- For TextView -->
-    <style name="RedCircleButton" parent="YellowCircleButton">
+    <style name="RedCircleButton" parent="CircleButton"><!-- TextView -->
         <item name="android:text">X</item>
-        <item name="android:textColor">@color/flatui_red_1</item>
+        <item name="android:textColor">@color/circle_red</item>
         <item name="fontface">montserrat_light</item>
         <item name="android:background">@drawable/stroked_circle_red</item>
     </style>
@@ -81,9 +81,8 @@
         <item name="android:textSize">22sp</item>
     </style>
 
-    <!-- For TextView -->
-    <style name="BlueCircleButton" parent="YellowCircleButton">
-        <item name="android:textColor">@color/flatui_blue_1</item>
+    <style name="BlueCircleButton" parent="CircleButton"><!-- TextView -->
+        <item name="android:textColor">@color/circle_blue</item>
         <item name="android:background">@drawable/stroked_circle_blue</item>
     </style>
 
@@ -96,9 +95,8 @@
         <item name="android:textSize">24sp</item>
     </style>
 
-    <!-- For ImageView -->
-    <style name="GreenCircleButton" parent="YellowCircleButton">
-        <item name="android:textColor">@color/flatui_green_1</item>
+    <style name="GreenCircleButton" parent="CircleButton"><!-- ImageView -->
+        <item name="android:textColor">@color/circle_green</item>
         <item name="android:background">@drawable/stroked_circle_green</item>
         <item name="android:src">@drawable/ic_check_black_48dp</item>
     </style>
@@ -108,7 +106,7 @@
         <item name="android:layout_height">@dimen/main_circle_size</item>
         <item name="android:background">@drawable/large_stroked_circle_green</item>
         <item name="android:padding">10dp</item>
-        <item name="customColor">@color/flatui_green_1</item>
+        <item name="customColor">@color/circle_green</item>
     </style>
 
 

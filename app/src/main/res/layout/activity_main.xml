@@ -12,14 +12,20 @@
     android:orientation="vertical"
     tools:context="com.compscieddy.didwhat.MainActivity">
 
+    <!-- Skill -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <com.compscieddy.didwhat.EddieTextView
-            android:layout_width="@dimen/main_circle_size"
-            android:layout_height="@dimen/main_circle_size"
-            style="@style/GreyCircleButton.Large"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="16dp"
+            android:layout_marginRight="20dp"
+            android:text="Reading"/>
+
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="@dimen/main_circle_size"
             android:layout_height="@dimen/main_circle_size"
@@ -42,10 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <com.compscieddy.didwhat.EddieTextView
-            android:layout_width="@dimen/main_circle_size"
-            android:layout_height="@dimen/main_circle_size"
-            style="@style/GreyCircleButton.Large"/>
+
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="@dimen/main_circle_size"
             android:layout_height="@dimen/main_circle_size"
@@ -69,10 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <com.compscieddy.didwhat.EddieTextView
-            android:layout_width="@dimen/main_circle_size"
-            android:layout_height="@dimen/main_circle_size"
-            style="@style/GreyCircleButton.Large"/>
+
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="@dimen/main_circle_size"
             android:layout_height="@dimen/main_circle_size"

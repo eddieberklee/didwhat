@@ -15,6 +15,12 @@
 
     <color name="main_yellow">@color/flatui_yellow_1</color>
 
+    <color name="circle_red">@color/flatui_red_1</color>
+    <color name="circle_blue">@color/flatui_blue_1</color>
+    <color name="circle_green">@color/flatui_green_1</color>
+    <color name="circle_grey">@color/greyscale_2</color>
+
+
     <!-- flat ui colors-->
     <color name="flatui_lightgrey_1">#ecf0f1</color>
     <color name="flatui_lightgrey_2">#bdc3c7</color>
