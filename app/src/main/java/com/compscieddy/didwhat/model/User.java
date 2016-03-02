@@ -14,7 +14,8 @@ import java.util.HashMap;
 public class User extends FirebaseObject {
 
   private static final Lawg lawg = Lawg.newInstance(User.class.getSimpleName());
-  private HashMap<String, Boolean> doSkillsMapping; private static final String DO_SKILLS_MAPPING = "doSkillsMapping";
+  private HashMap<String, Boolean> doSkillsMapping = new HashMap<>();
+  private static final String DO_SKILLS_MAPPING = "doSkillsMapping";
 
   @Override
   protected String getObjectUrl() {

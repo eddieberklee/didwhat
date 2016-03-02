@@ -5,12 +5,101 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.compscieddy.didwhat.model.DoDay;
+import com.compscieddy.didwhat.model.User;
+import com.compscieddy.eddie_utils.Lawg;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Set;
+
 public class MainActivity extends BaseActivity {
+
+  private static final Lawg lawg = Lawg.newInstance(MainActivity.class.getSimpleName());
+
+  private DoDay mDoDay;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    findOrCreateDoDay();
+  }
+
+  private void findOrCreateDoDay() {
+    String encodedEmail = getEncodedEmail();
+    new Firebase(Constants.FIREBASE_URL_USERS).child(encodedEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+      @Override
+      public void onDataChange(DataSnapshot dataSnapshot) {
+        User user = dataSnapshot.getValue(User.class);
+        if (user == null) {
+          // This can happen when the server data is manually deleted via the dashboard
+          lawg.e("User is null dataSnapshot:" + dataSnapshot);
+          user = populateUserFirebaseData(lawg);
+        }
+
+        HashMap<String, Boolean> userDoSkillsMapping = user.getDoSkillsMapping();
+        if (userDoSkillsMapping == null || userDoSkillsMapping.size() == 0) {
+          createNewDoDay(user);
+          init();
+        }
+
+        Calendar c = Calendar.getInstance();
+        Date today = c.getTime();
+        String todayDayKey = DoDay.createKey(getEncodedEmail(), today);
+
+        Set<String> doSkillKeys = userDoSkillsMapping.keySet();
+
+        if (doSkillKeys.contains(todayDayKey)) {
+          new Firebase(Constants.FIREBASE_URL_DODAYS).child(todayDayKey).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+              DoDay mDoDay = dataSnapshot.getValue(DoDay.class);
+              if (mDoDay == null) {
+                lawg.e("Uh wtf man why is mDoDay null dataSnapshot:" + dataSnapshot);
+              }
+              init();
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+              lawg.e("onCancelled() while getting a ");
+            }
+          });
+        } else {
+          createNewDoDay(user);
+          init();
+        }
+
+
+      }
+
+      @Override
+      public void onCancelled(FirebaseError firebaseError) {
+        lawg.e("onCancelled() while trying to get user");
+      }
+    });
+  }
+
+  private void createNewDoDay(User user) {
+    Date today = new Date();
+    String doDayKey = DoDay.createKey(getEncodedEmail(), today);
+    mDoDay = new DoDay(doDayKey, user, today);
+    Firebase newDoDayRef = new Firebase(Constants.FIREBASE_URL_DODAYS).child(doDayKey);
+    newDoDayRef.setValue(mDoDay);
+  }
+
+  /**
+   * Called after a DoDay has been fetched or newly created
+   */
+  private void init() {
+
   }
 
   @Override

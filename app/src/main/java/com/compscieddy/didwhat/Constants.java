@@ -11,4 +11,8 @@ public class Constants {
   public static final String FIREBASE_URL_DOS = FIREBASE_URL + "/" + "dos";
   public static final String FIREBASE_URL_DOSKILLS = FIREBASE_URL + "/" + "doskills";
 
+  /** Preference Key */
+  public static final String PREF_KEY_EMAIL = "pref_key_email";
+
+
 }
