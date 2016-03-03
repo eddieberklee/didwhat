@@ -7,4 +7,7 @@
 
     <dimen name="skill_title_width">100dp</dimen>
 
+    <dimen name="new_skill_column_width">80dp</dimen>
+    <dimen name="new_skill_text_size">14sp</dimen>
+
 </resources>
