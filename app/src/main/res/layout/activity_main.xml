@@ -12,18 +12,29 @@
     android:orientation="vertical"
     tools:context="com.compscieddy.didwhat.MainActivity">
 
-    <!-- Skill -->
+    <!-- Dates -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <Space
+            android:layout_width="@dimen/skill_title_width"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!-- Skill -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:orientation="horizontal">
 
         <com.compscieddy.didwhat.EddieTextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/skill_title_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textSize="16dp"
-            android:layout_marginRight="20dp"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
             android:text="Reading"/>
 
         <com.compscieddy.didwhat.EddieTextView
@@ -47,7 +58,16 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
         android:orientation="horizontal">
+
+        <com.compscieddy.didwhat.EddieTextView
+            android:layout_width="@dimen/skill_title_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            android:text="Lifting Weights"/>
 
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="@dimen/main_circle_size"
@@ -71,7 +91,16 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
         android:orientation="horizontal">
+
+        <com.compscieddy.didwhat.EddieTextView
+            android:layout_width="@dimen/skill_title_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            android:text="Programming"/>
 
         <com.compscieddy.didwhat.EddieTextView
             android:layout_width="@dimen/main_circle_size"
