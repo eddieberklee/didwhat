@@ -31,10 +31,9 @@ public class DoDay extends FirebaseObject {
 
   public DoDay() {}
 
-  public DoDay(String key, User user, Date date) {
+  public DoDay(String key, Date date) {
     super(key);
     this.date = date;
-    user.addDoSkillsMapping(key);
   }
 
   /** Getters */

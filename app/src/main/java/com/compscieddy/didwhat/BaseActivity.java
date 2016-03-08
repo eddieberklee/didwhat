@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.compscieddy.didwhat.model.User;
@@ -18,6 +19,8 @@ import com.firebase.client.Firebase;
 public class BaseActivity extends AppCompatActivity {
 
   private static final Lawg lawg = Lawg.newInstance(BaseActivity.class.getSimpleName());
+
+  protected User mUser;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,11 @@ public class BaseActivity extends AppCompatActivity {
     Firebase newUserRef = new Firebase(Constants.FIREBASE_URL_USERS).child(encodedEmail);
     newUserRef.setValue(newUser);
     return newUser;
+  }
+
+  @Nullable
+  public User getUser() {
+    return mUser;
   }
 
 }

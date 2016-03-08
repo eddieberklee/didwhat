@@ -15,9 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.compscieddy.didwhat.BaseActivity;
+import com.compscieddy.didwhat.Constants;
 import com.compscieddy.didwhat.R;
+import com.compscieddy.didwhat.model.DoSkill;
 import com.compscieddy.eddie_utils.Etils;
 import com.compscieddy.eddie_utils.Lawg;
+import com.firebase.client.Firebase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -74,7 +77,13 @@ public class SkillTitleInputFragment extends FloatingBaseFragment {
 
   @OnClick(R.id.create_button)
   public void createButtonClick() {
-    /** todo: create the DaySkill here */
+    // Verify that title is correct - (fits like size limits)
+    String title = mTitleInput.getText().toString();
+
+    Firebase newDoSkill = new Firebase(Constants.FIREBASE_URL_DOSKILLS).push();
+    DoSkill doSkill = new DoSkill(newDoSkill.getKey(), title, mActivity.getUser());
+    newDoSkill.setValue(doSkill);
+
 //    mActivity.mAdapter.notifyDataSetChanged();
     mSupportFragmentManager.beginTransaction().remove(SkillTitleInputFragment.this).commit();
   }

@@ -35,7 +35,6 @@ public class MainActivity extends BaseActivity {
 
   private DoDay mDoDay;
   private List<DoSkill> mDoSkills;
-  private User mUser;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

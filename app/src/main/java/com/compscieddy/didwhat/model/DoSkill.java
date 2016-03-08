@@ -18,6 +18,16 @@ public class DoSkill extends FirebaseObject {
   private HashMap<String, Boolean> doDaysMapping;
   private static final String DO_DAYS_MAPPING = "doDaysMapping";
 
+  public DoSkill() {
+    super();
+  }
+
+  public DoSkill(String key, String title, User user) {
+    super(key);
+    this.title = title;
+    user.addDoSkillsMapping(key);
+  }
+
   @Override
   public void deleteFirebase(Context context) {
 
