@@ -15,7 +15,8 @@ public class DoSkill extends FirebaseObject {
   private static final Lawg lawg = Lawg.newInstance(DoSkill.class.getSimpleName());
 
   private String title; private static final String TITLE = "title";
-  private HashMap<String, Boolean> doDaysMapping; private static final String DO_DAYS_MAPPING = "doDaysMapping";
+  private HashMap<String, Boolean> doDaysMapping;
+  private static final String DO_DAYS_MAPPING = "doDaysMapping";
 
   @Override
   public void deleteFirebase(Context context) {

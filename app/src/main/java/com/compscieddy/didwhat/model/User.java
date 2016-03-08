@@ -15,7 +15,7 @@ public class User extends FirebaseObject {
 
   private static final Lawg lawg = Lawg.newInstance(User.class.getSimpleName());
   private HashMap<String, Boolean> doSkillsMapping = new HashMap<>();
-  private static final String DO_SKILLS_MAPPING = "doSkillsMapping";
+  public static final String DOSKILLS_MAPPING = "doSkillsMapping";
 
   @Override
   protected String getObjectUrl() {
@@ -54,12 +54,12 @@ public class User extends FirebaseObject {
 
   public void addDoSkillsMapping(String doSkillsKey) {
     doSkillsMapping.put(doSkillsKey, true);
-    updateFirebase(DO_SKILLS_MAPPING, doSkillsMapping, doSkillsKey);
+    updateFirebase(DOSKILLS_MAPPING, doSkillsMapping, doSkillsKey);
   }
 
   public void removeDoSkillsMapping(String doSkillsKey) {
     doSkillsMapping.remove(doSkillsKey);
-    updateFirebase(DO_SKILLS_MAPPING, doSkillsMapping, doSkillsKey);
+    updateFirebase(DOSKILLS_MAPPING, doSkillsMapping, doSkillsKey);
   }
 
 

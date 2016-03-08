@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <com.compscieddy.didwhat.EddieTextView
+        android:layout_width="@dimen/skill_title_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:text="Lifting Weights"
+        android:textSize="20sp"/>
+
+    <com.compscieddy.didwhat.EddieTextView
+        style="@style/BlueCircleButton.Large"
+        android:text="8"/>
+
+    <com.compscieddy.didwhat.EddieTextView
+        style="@style/RedCircleButton.Large"/>
+
+    <com.compscieddy.didwhat.ui.ColorImageView
+        style="@style/GreenCircleButton.Large"/>
+
+    <com.compscieddy.didwhat.ui.ColorImageView
+        style="@style/YellowCircleButton.Large"/>
+</LinearLayout>

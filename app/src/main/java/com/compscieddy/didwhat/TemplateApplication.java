@@ -18,4 +18,9 @@ public class TemplateApplication extends Application {
     /* Enable disk persistence  */
     Firebase.getDefaultConfig().setPersistenceEnabled(true);
   }
+
+  public static boolean isFirebaseLoggedIn() {
+    return new Firebase(Constants.FIREBASE_URL).getAuth() != null;
+  }
+
 }

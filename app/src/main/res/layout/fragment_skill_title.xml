@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/main_container"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <com.compscieddy.didwhat.EddieEditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_corner_stroked_yellow"
+        android:inputType="textCapCharacters"
+        android:imeOptions="actionGo"
+        android:textColor="@color/greyscale_8"
+        android:hint="Skill Name..."/>
+
+    <com.compscieddy.didwhat.EddieTextView
+        android:id="@+id/create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_corner_stroked_yellow"
+        android:paddingBottom="14dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="14dp"
+        android:text="Start"
+        android:textAllCaps="true"
+        android:textColor="@color/greyscale_8"/>
+
+</LinearLayout>

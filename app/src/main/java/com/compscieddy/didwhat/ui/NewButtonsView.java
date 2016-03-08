@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.compscieddy.didwhat.R;
+import com.compscieddy.eddie_utils.Lawg;
 
 /**
  * Created by elee on 1/25/16.
  */
 public class NewButtonsView extends FrameLayout {
+
+  private static final Lawg lawg = Lawg.newInstance(NewButtonsView.class.getSimpleName());
 
   private LayoutInflater mInflater;
   private Context mContext;
@@ -48,12 +51,14 @@ public class NewButtonsView extends FrameLayout {
   public boolean onInterceptTouchEvent(MotionEvent ev) {
     int[] rejectedViewIds = new int[] { R.id.new_numbers_section, R.id.new_success_section, R.id.new_fail_section };
     boolean inRejectedBounds = false;
+    lawg.d(" ev.getRawX(): " + ev.getRawX() + " ev.getRawY(): " + ev.getRawY());
     for (int rejectedViewId : rejectedViewIds) {
       if (clickWithinBounds(ev.getRawX(), ev.getRawY(), rejectedViewId)) {
+        lawg.d("Clicked within bounds!");
         inRejectedBounds = true;
       }
     }
-    if (inRejectedBounds) {
+    if (!inRejectedBounds) {
       this.animate().alpha(0).withEndAction(new Runnable() {
         @Override
         public void run() {
@@ -72,6 +77,8 @@ public class NewButtonsView extends FrameLayout {
     float boundTop = view.getY();
     float boundBottom = boundTop + view.getHeight();
 
+    lawg.d("top right bottom left");
+    lawg.d(" boundTop: " + boundTop + " boundRight: " + boundRight + " boundBottom: " + boundBottom + " boundLeft: " + boundLeft);
     return x >= boundLeft && x <= boundRight && y >= boundTop && y <= boundBottom;
   }
 
