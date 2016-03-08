@@ -3,8 +3,15 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:id="@+id/root_view"
-              android:background="@color/black_transp_70">
+              android:id="@+id/root_view">
+
+    <View
+        android:id="@+id/background"
+        android:layout_gravity="center"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        android:background="@drawable/transp_black_circle"/>
 
     <LinearLayout
         android:id="@+id/new_numbers_section"

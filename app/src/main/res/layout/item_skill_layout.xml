@@ -31,12 +31,15 @@
             style="@style/GreenCircleButton.Large"/>
 
         <com.compscieddy.didwhat.ui.ColorImageView
+            android:id="@+id/today_button"
             style="@style/YellowCircleButton.Large"/>
 
     </LinearLayout>
 
     <com.compscieddy.didwhat.ui.NewButtonsView
+        android:id="@+id/new_buttons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
 
 </FrameLayout>

@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.compscieddy.didwhat.R;
 import com.compscieddy.didwhat.model.DoSkill;
+import com.compscieddy.didwhat.ui.NewButtonsView;
+import com.compscieddy.eddie_utils.Lawg;
 
 import java.util.List;
 
@@ -15,6 +17,8 @@ import java.util.List;
  * Created by elee on 3/8/16.
  */
 public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.SkillViewHolder> {
+
+  private static final Lawg lawg = Lawg.newInstance(SkillsAdapter.class.getSimpleName());
 
   private List<DoSkill> mDoSkills;
 
@@ -36,19 +40,31 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.SkillViewH
   }
 
   @Override
-  public void onBindViewHolder(SkillViewHolder holder, int position) {
+  public void onBindViewHolder(final SkillViewHolder holder, int position) {
     DoSkill doSkill = mDoSkills.get(position);
     holder.vSkillTitle.setText(doSkill.getTitle());
+    holder.vTodayButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        lawg.d("onClick");
+        holder.vNewButtons.setVisibility(View.VISIBLE);
+        holder.vNewButtons.startAnimation();
+      }
+    });
   }
 
   /** Public Classes */
 
   public static class SkillViewHolder extends RecyclerView.ViewHolder {
     public TextView vSkillTitle;
+    public View vTodayButton;
+    public NewButtonsView vNewButtons;
 
     public SkillViewHolder(View v) {
       super(v);
       vSkillTitle = (TextView) v.findViewById(R.id.skill_title);
+      vTodayButton = v.findViewById(R.id.today_button);
+      vNewButtons = (NewButtonsView) v.findViewById(R.id.new_buttons);
     }
   }
 

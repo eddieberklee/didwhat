@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
 import com.compscieddy.didwhat.R;
@@ -20,6 +22,9 @@ public class NewButtonsView extends FrameLayout {
   private static final Lawg lawg = Lawg.newInstance(NewButtonsView.class.getSimpleName());
 
   private final boolean DEBUG_CLICK = false;
+
+  private View vBackground;
+  private final Interpolator ACCELERATE_DECELERATE_INTERPOLATOR = new AccelerateDecelerateInterpolator();
 
   private LayoutInflater mInflater;
   private Context mContext;
@@ -45,8 +50,21 @@ public class NewButtonsView extends FrameLayout {
   private void init(@Nullable AttributeSet attrs) {
     mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     View view = mInflater.inflate(R.layout.new_buttons, null, false);
+    vBackground = view.findViewById(R.id.background);
     LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     addView(view, layoutParams);
+  }
+
+  public void startAnimation() {
+    NewButtonsView.this.setVisibility(VISIBLE);
+    vBackground.setVisibility(VISIBLE);
+    vBackground.setScaleX(1f);
+    vBackground.setScaleY(1f);
+    vBackground.animate()
+        .setDuration(800)
+        .scaleX(getWidth())
+        .scaleY(getHeight())
+        .setInterpolator(ACCELERATE_DECELERATE_INTERPOLATOR);
   }
 
   @Override
