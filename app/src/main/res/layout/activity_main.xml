@@ -27,72 +27,14 @@
                 android:layout_height="match_parent"/>
         </LinearLayout>
 
-        <!-- Skill -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
-            android:orientation="horizontal">
-
-            <com.compscieddy.didwhat.EddieTextView
-                android:layout_width="@dimen/skill_title_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
-                app:fontface="montserrat_light"
-                android:textAllCaps="true"
-                android:text="Reading"
-                android:textSize="20sp"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.ui.ColorImageView
-                style="@style/YellowCircleButton.Large"/>
-        </LinearLayout>
-
+        <!-- Skills -->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/skills_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
-            android:orientation="horizontal">
-
-            <com.compscieddy.didwhat.EddieTextView
-                android:layout_width="@dimen/skill_title_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
-                app:fontface="montserrat_light"
-                android:textAllCaps="true"
-                android:text="Programming"
-                android:textSize="20sp"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.EddieTextView
-                style="@style/GreyCircleButton.Large"/>
-
-            <com.compscieddy.didwhat.ui.ColorImageView
-                style="@style/YellowCircleButton.Large"/>
-        </LinearLayout>
-
         <com.compscieddy.didwhat.EddieTextView
-            android:id="@+id/new_skill_button"
+            android:id="@+id/start_skill_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

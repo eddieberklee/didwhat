@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 
   private static final Lawg lawg = Lawg.newInstance(MainActivity.class.getSimpleName());
 
-  @Bind(R.id.new_skill_button) View mNewSkillButton;
+  @Bind(R.id.start_skill_button) View mStartSkillButton;
   @Bind(R.id.skills_recyclerview) RecyclerView mSkillsRecyclerView;
 
   private RecyclerView.Adapter mSkillsAdapter;
@@ -202,7 +202,7 @@ public class MainActivity extends BaseActivity {
   }
 
   private void setListeners() {
-    mNewSkillButton.setOnClickListener(new View.OnClickListener() {
+    mStartSkillButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         SkillTitleInputFragment fragment = new SkillTitleInputFragment();

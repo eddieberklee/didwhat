@@ -35,8 +35,8 @@
         <item name="android:layout_height">28dp</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">3dp</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:layout_margin">3dp</item>
     </style>
     <style name="YellowCircleButton" parent="CircleButton"><!-- ImageView -->
         <item name="android:src">@drawable/ic_add_black_48dp</item>
@@ -47,7 +47,7 @@
     <style name="YellowCircleButton.Large" parent="YellowCircleButton">
         <item name="android:layout_width">@dimen/main_circle_size</item>
         <item name="android:layout_height">@dimen/main_circle_size</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/main_circle_padding</item>
         <item name="android:background">@drawable/large_dashed_circle_yellow</item>
     </style>
 
@@ -90,7 +90,7 @@
         <item name="android:layout_width">@dimen/main_circle_size</item>
         <item name="android:layout_height">@dimen/main_circle_size</item>
         <item name="android:background">@drawable/large_stroked_circle_blue</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/main_circle_padding</item>
         <item name="fontface">montserrat_regular</item>
         <item name="android:textSize">24sp</item>
     </style>
@@ -105,7 +105,7 @@
         <item name="android:layout_width">@dimen/main_circle_size</item>
         <item name="android:layout_height">@dimen/main_circle_size</item>
         <item name="android:background">@drawable/large_stroked_circle_green</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/main_circle_padding</item>
         <item name="customColor">@color/circle_green</item>
     </style>
 
