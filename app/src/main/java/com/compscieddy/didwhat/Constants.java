@@ -14,10 +14,13 @@ public class Constants {
   public static final String FIREBASE_URL_DOSKILLS = FIREBASE_URL + "/" + "doskills";
 
   /** Specific Field Location Mappings */
-  public static final String FIREBASE_URL_USER_DOSKILL_MAPPING = FIREBASE_URL_USERS + "/" + User.DOSKILLS_MAPPING;
+  public static String FIREBASE_URL_USER_DOSKILL_MAPPING; // populated if user logged in
 
   /** Preference Key */
   public static final String PREF_KEY_EMAIL = "pref_key_email";
 
+  public static void initConstants(String encodedEmail) {
+    FIREBASE_URL_USER_DOSKILL_MAPPING = FIREBASE_URL_USERS + "/" + encodedEmail + "/" + User.DOSKILLS_MAPPING;
+  }
 
 }

@@ -19,7 +19,6 @@ public class DoSkill extends FirebaseObject {
   private static final String DO_DAYS_MAPPING = "doDaysMapping";
 
   public DoSkill() {
-    super();
   }
 
   public DoSkill(String key, String title, User user) {

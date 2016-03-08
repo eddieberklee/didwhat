@@ -19,6 +19,8 @@ public class NewButtonsView extends FrameLayout {
 
   private static final Lawg lawg = Lawg.newInstance(NewButtonsView.class.getSimpleName());
 
+  private final boolean DEBUG_CLICK = false;
+
   private LayoutInflater mInflater;
   private Context mContext;
 
@@ -51,10 +53,10 @@ public class NewButtonsView extends FrameLayout {
   public boolean onInterceptTouchEvent(MotionEvent ev) {
     int[] rejectedViewIds = new int[] { R.id.new_numbers_section, R.id.new_success_section, R.id.new_fail_section };
     boolean inRejectedBounds = false;
-    lawg.d(" ev.getRawX(): " + ev.getRawX() + " ev.getRawY(): " + ev.getRawY());
+    if (DEBUG_CLICK) lawg.d(" ev.getRawX(): " + ev.getRawX() + " ev.getRawY(): " + ev.getRawY());
     for (int rejectedViewId : rejectedViewIds) {
       if (clickWithinBounds(ev.getRawX(), ev.getRawY(), rejectedViewId)) {
-        lawg.d("Clicked within bounds!");
+        if (DEBUG_CLICK) lawg.d("Clicked within bounds!");
         inRejectedBounds = true;
       }
     }
@@ -77,8 +79,7 @@ public class NewButtonsView extends FrameLayout {
     float boundTop = view.getY();
     float boundBottom = boundTop + view.getHeight();
 
-    lawg.d("top right bottom left");
-    lawg.d(" boundTop: " + boundTop + " boundRight: " + boundRight + " boundBottom: " + boundBottom + " boundLeft: " + boundLeft);
+    if (DEBUG_CLICK) lawg.d(" boundTop: " + boundTop + " boundRight: " + boundRight + " boundBottom: " + boundBottom + " boundLeft: " + boundLeft);
     return x >= boundLeft && x <= boundRight && y >= boundTop && y <= boundBottom;
   }
 

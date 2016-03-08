@@ -3,14 +3,18 @@ package com.compscieddy.didwhat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.compscieddy.didwhat.adapter.SkillsAdapter;
 import com.compscieddy.didwhat.fragment.SkillTitleInputFragment;
 import com.compscieddy.didwhat.model.DoDay;
 import com.compscieddy.didwhat.model.DoSkill;
 import com.compscieddy.didwhat.model.User;
+import com.compscieddy.eddie_utils.Etils;
 import com.compscieddy.eddie_utils.Lawg;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -18,6 +22,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,9 +37,13 @@ public class MainActivity extends BaseActivity {
   private static final Lawg lawg = Lawg.newInstance(MainActivity.class.getSimpleName());
 
   @Bind(R.id.new_skill_button) View mNewSkillButton;
+  @Bind(R.id.skills_recyclerview) RecyclerView mSkillsRecyclerView;
+
+  private RecyclerView.Adapter mSkillsAdapter;
+  private RecyclerView.LayoutManager mLayoutManager;
 
   private DoDay mDoDay;
-  private List<DoSkill> mDoSkills;
+  private List<DoSkill> mDoSkills = new ArrayList<>();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +88,7 @@ public class MainActivity extends BaseActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
               mDoDay = dataSnapshot.getValue(DoDay.class);
               if (mDoDay == null) {
-                lawg.e("Uh wtf man why is mDoDay null dataSnapshot:" + dataSnapshot);
+                Etils.logAndToast(MainActivity.this, lawg, "Uh wtf man why is mDoDay null dataSnapshot:" + dataSnapshot);
               }
               init();
             }
@@ -106,7 +115,7 @@ public class MainActivity extends BaseActivity {
   private void createNewDoDay(User user) {
     Date today = new Date();
     String doDayKey = DoDay.createKey(getEncodedEmail(), today);
-    mDoDay = new DoDay(doDayKey, user, today);
+    mDoDay = new DoDay(doDayKey, today);
     Firebase newDoDayRef = new Firebase(Constants.FIREBASE_URL_DODAYS).child(doDayKey);
     newDoDayRef.setValue(mDoDay);
   }
@@ -116,11 +125,56 @@ public class MainActivity extends BaseActivity {
    */
   private void init() {
 
-//    List<String> doSkillKeys = new ArrayList<>();
-//    doSkillKeys.addAll(mUser.getDoSkillsMapping().keySet());
+    mLayoutManager = new LinearLayoutManager(this);
+    mSkillsRecyclerView.setLayoutManager(mLayoutManager);
+
+    mSkillsAdapter = new SkillsAdapter(mDoSkills);
+    mSkillsRecyclerView.setAdapter(mSkillsAdapter);
 
     new Firebase(Constants.FIREBASE_URL_USER_DOSKILL_MAPPING).addChildEventListener(new ChildEventListener() {
       @Override
+      public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+        lawg.d("onChildAdded dataSnapshot:" + dataSnapshot);
+        String doSkillKey = dataSnapshot.getKey();
+        new Firebase(Constants.FIREBASE_URL_DOSKILLS).child(doSkillKey).addListenerForSingleValueEvent(new ValueEventListener() {
+          @Override
+          public void onDataChange(DataSnapshot dataSnapshot) {
+            DoSkill doSkill = dataSnapshot.getValue(DoSkill.class);
+            mDoSkills.add(doSkill);
+            mSkillsAdapter.notifyDataSetChanged();
+          }
+          @Override
+          public void onCancelled(FirebaseError firebaseError) {
+            lawg.e("Error onCancelled() trying to get individual DoSkill");
+          }
+        });
+      }
+
+      @Override
+      public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+      }
+
+      @Override
+      public void onChildRemoved(DataSnapshot dataSnapshot) {
+        lawg.d("onChildRemoved dataSnapshot:" + dataSnapshot);
+      }
+
+      @Override
+      public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+      }
+
+      @Override
+      public void onCancelled(FirebaseError firebaseError) {
+        lawg.e("Error onCancelled() trying to get DoSkill mapping");
+      }
+    });
+
+
+        /*
+        .addChildEventListener(new ChildEventListener() {
+    @Override
       public void onChildAdded(DataSnapshot dataSnapshot, String s) {
         lawg.d("onChildAdded() s: " + s + " dataSnapshot: " + dataSnapshot);
       }
@@ -141,6 +195,7 @@ public class MainActivity extends BaseActivity {
         lawg.e("onCancelled while trying to traverse skills");
       }
     });
+  */
 
     setListeners();
 

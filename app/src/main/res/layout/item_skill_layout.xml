@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
 
     <com.compscieddy.didwhat.EddieTextView
+        android:id="@+id/skill_title"
         android:layout_width="@dimen/skill_title_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
-        android:text="Lifting Weights"
-        android:textSize="20sp"/>
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        app:fontface="montserrat_light"
+        tools:text="Lifting Weights"/>
 
     <com.compscieddy.didwhat.EddieTextView
         style="@style/BlueCircleButton.Large"
@@ -24,4 +29,5 @@
 
     <com.compscieddy.didwhat.ui.ColorImageView
         style="@style/YellowCircleButton.Large"/>
+
 </LinearLayout>

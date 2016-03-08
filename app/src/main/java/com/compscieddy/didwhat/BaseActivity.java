@@ -39,6 +39,7 @@ public class BaseActivity extends AppCompatActivity {
     } else {
       String email = (String) authData.getProviderData().get("email");
       String encodedEmail = Etils.encodeEmail(email);
+      Constants.initConstants(encodedEmail);
       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(BaseActivity.this);
       sharedPreferences.edit().putString(Constants.PREF_KEY_EMAIL, encodedEmail).apply();
       if (this instanceof AuthenticationActivity) { // don't want to be redirecting if we're already on the ClockActivity
