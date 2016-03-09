@@ -40,15 +40,16 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.SkillViewH
   }
 
   @Override
-  public void onBindViewHolder(final SkillViewHolder holder, int position) {
+  public void onBindViewHolder(SkillViewHolder holder, int position) {
     DoSkill doSkill = mDoSkills.get(position);
     holder.vSkillTitle.setText(doSkill.getTitle());
+    final NewButtonsView newButtonsView = holder.vNewButtons;
     holder.vTodayButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         lawg.d("onClick");
-        holder.vNewButtons.setVisibility(View.VISIBLE);
-        holder.vNewButtons.startAnimation();
+        newButtonsView.setVisibility(View.VISIBLE);
+        newButtonsView.startAnimation();
       }
     });
   }

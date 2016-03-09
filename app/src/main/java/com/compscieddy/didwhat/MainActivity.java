@@ -51,6 +51,12 @@ public class MainActivity extends BaseActivity {
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
 
+    mLayoutManager = new LinearLayoutManager(this);
+    mSkillsRecyclerView.setLayoutManager(mLayoutManager);
+
+    mSkillsAdapter = new SkillsAdapter(mDoSkills);
+    mSkillsRecyclerView.setAdapter(mSkillsAdapter);
+
     findOrCreateDoDay();
   }
 
@@ -124,12 +130,6 @@ public class MainActivity extends BaseActivity {
    * Called after a DoDay has been fetched or newly created
    */
   private void init() {
-
-    mLayoutManager = new LinearLayoutManager(this);
-    mSkillsRecyclerView.setLayoutManager(mLayoutManager);
-
-    mSkillsAdapter = new SkillsAdapter(mDoSkills);
-    mSkillsRecyclerView.setAdapter(mSkillsAdapter);
 
     new Firebase(Constants.FIREBASE_URL_USER_DOSKILL_MAPPING).addChildEventListener(new ChildEventListener() {
       @Override

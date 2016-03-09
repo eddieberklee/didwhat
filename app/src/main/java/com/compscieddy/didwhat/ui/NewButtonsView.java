@@ -60,6 +60,7 @@ public class NewButtonsView extends FrameLayout {
     vBackground.setVisibility(VISIBLE);
     vBackground.setScaleX(1f);
     vBackground.setScaleY(1f);
+    vBackground.requestLayout();
     vBackground.animate()
         .setDuration(800)
         .scaleX(getWidth())
