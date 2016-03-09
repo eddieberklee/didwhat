@@ -13,5 +13,9 @@ To get it up and running
 
 TODO:
 ====
-* refactor out the blue/red/grey/green properties as a style
+* figure out why new buttons can't be opened
+* find out best way to hook up an onItemClickListener to send to DoSkill individual activity
+  * (secondary) and if you hold down instead, just a quick preview like Instagram 
+* create dialog for blue number input
+* remove the red x for now - this seems unnecessary as things get greyed out anyway
 
